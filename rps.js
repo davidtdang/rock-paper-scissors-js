@@ -1,40 +1,63 @@
-$("#button").on("click", function(){
-  game();
+$("#rock").on("click", function(){
+  rock();
+});
+
+$("#paper").on("click", function(){
+  paper();
+});
+
+$("#scissors").on("click", function(){
+  scissors();
 });
 
 
-function game(){
+function rock(){
 $(".container").empty();
-var input = prompt("Please enter: rock, paper, or scissors");
-var takenInput = input.toLowerCase();
 
 var computerOptions = ["rock", "paper", "scissors"]
 var computerInput = computerOptions[Math.floor(Math.random()*computerOptions.length)];
 
-if (takenInput === computerInput ) {
+if (computerInput === "rock ") {
   $(".container").append("Tie game");
 }
-else if (takenInput === "rock" && computerInput === "paper"){
+else if (computerInput === "paper"){
   $(".container").append("You lose... the computer played " + computerInput);
 }
-else if (takenInput === "rock" && computerInput === "scissors"){
+else if (computerInput === "scissors"){
   $(".container").append("You win! The computer played " + computerInput);
 }
-else if (takenInput === "scissors" && computerInput === "paper"){
-  $(".container").append("You win! The computer played " + computerInput);
+};
+
+function paper(){
+$(".container").empty();
+
+var computerOptions = ["rock", "paper", "scissors"]
+var computerInput = computerOptions[Math.floor(Math.random()*computerOptions.length)];
+
+if (computerInput === "paper") {
+  $(".container").append("Tie game");
 }
-else if (takenInput === "scissors" && computerInput === "rock"){
+else if (computerInput === "scissors"){
   $(".container").append("You lose... the computer played " + computerInput);
 }
-else if (takenInput === "paper" && computerInput === "scissors"){
-  $(".container").append("You lose...  the computer played " + computerInput);
+else if (computerInput === "rock"){
+  $(".container").append("You win! The computer played " + computerInput);
 }
-else if (takenInput === "paper" && computerInput === "rock"){
-  $(".container").append("You win! the computer played " + computerInput);
-}
-else if (takenInput !== computerInput){
-  alert("Please only enter rock, paper or scissors");
-}
+};
 
+function scissors(){
+$(".container").empty();
 
+var computerOptions = ["rock", "paper", "scissors"]
+var computerInput = computerOptions[Math.floor(Math.random()*computerOptions.length)];
+
+if (computerInput === "scissors") {
+  $(".container").append("Tie game");
+}
+else if (computerInput === "paper"){
+  $(".container").append("You win! The computer played " + computerInput);
+}
+else if (computerInput === "rock"){
+  $(".container").append("You lose... the computer played " + computerInput);
+}
 };
